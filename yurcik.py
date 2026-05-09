@@ -18,7 +18,7 @@ import random
 import os
 
 BATCH_SIZE    = 5000
-MAX_BATCHES   = 10  # 10 × 5000 = 50,000 paquets
+MAX_BATCHES   = 10  
 CRYPTOPAN_KEY = b"a" * 32
 
 # ============================================
@@ -168,7 +168,7 @@ def process_file(input_file, output_file, anonymize_func, name):
         return True
 
     except Exception as e:
-        print(f"❌ Erreur : {e}\n")
+        print(f" Erreur : {e}\n")
         return False
 
 # ============================================
@@ -185,7 +185,7 @@ if __name__ == "__main__":
     INPUT = "Tuesday-WorkingHours-converted.pcap"
 
     if not os.path.exists(INPUT):
-        print(f"❌ Fichier {INPUT} non trouvé !")
+        print(f" Fichier {INPUT} non trouvé !")
         exit(1)
 
     process_file(INPUT, "Tuesday-WorkingHours-C1-BlackMarker.pcap",
