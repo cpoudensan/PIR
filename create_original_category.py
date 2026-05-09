@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 """
-BASELINE CATÉGORIE PORTS
-=========================
 
 Crée un fichier PCAP avec :
 - IPs ORIGINALES (pas anonymisées)
@@ -49,7 +47,7 @@ if __name__ == "__main__":
     print("="*60 + "\n")
 
     if not os.path.exists(INPUT_FILE):
-        print(f"❌ {INPUT_FILE} non trouvé !")
+        print(f" {INPUT_FILE} non trouvé !")
         exit(1)
 
     total = 0
@@ -78,4 +76,4 @@ if __name__ == "__main__":
         print(f"  sudo snort -r {OUTPUT_FILE} -c /etc/snort/snort.conf -A full -l ./alerts_orig_category/ -k none")
 
     except Exception as e:
-        print(f"❌ Erreur : {e}")
+        print(f" Erreur : {e}")
