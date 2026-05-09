@@ -37,7 +37,7 @@ print("CALCUL F-SCORE - 3 COURBES")
 print("="*60)
 
 
-# Courbe 1 : ports intacts (déjà calculé)
+# Courbe 1 : ports intacts 
 fm_intact = get_fmeasures("alerts_C3", "k bits IPs + ports INTACTS")
 
 
