@@ -4,7 +4,7 @@ K BITS IPs + TRANSFORMATION PORTS
 ===================================
 
 Crée 3 séries de fichiers PCAP :
-1. k bits IPs + ports INTACTS     (déjà fait : C3_keyed_k*.pcap)
+1. k bits IPs + ports INTACTS     (déjà fait)
 2. k bits IPs + ports BLACK MARKER (→ 0)
 3. k bits IPs + ports KEYED RANDOM (→ aléatoire cohérent)
 
@@ -70,10 +70,6 @@ def apply_keyed_ports(pkt, port_mapping):
                 port_mapping[p] = random.randint(1024, 65535)
             setattr(pkt[UDP], attr, port_mapping[p])
 
-# ============================================
-# CRÉER UN FICHIER PCAP
-# ============================================
-
 def create_file(output_file, k, port_transform):
     """Crée un fichier PCAP avec k bits IPs + transformation ports."""
     ip_mapping   = {}
@@ -107,9 +103,9 @@ def create_file(output_file, k, port_transform):
                     port_transform(p, port_mapping)
                     writer.write(p)
                 total += len(batch)
-        print(f"   ✓ {output_file} ({total} paquets)")
+        print(f"    {output_file} ({total} paquets)")
     except Exception as e:
-        print(f"   ❌ Erreur : {e}")
+        print(f"    Erreur : {e}")
 
 # ============================================
 # MAIN
@@ -123,7 +119,7 @@ if __name__ == "__main__":
     print("="*60 + "\n")
 
     if not os.path.exists(INPUT_FILE):
-        print(f"❌ {INPUT_FILE} non trouvé !")
+        print(f" {INPUT_FILE} non trouvé !")
         exit(1)
 
     # Série 2 : k bits IPs + ports BLACK MARKER
@@ -143,7 +139,7 @@ if __name__ == "__main__":
         print(f"k={k}...", end=' ')
         create_file(output, k, apply_keyed_ports)
 
-    print("\n✓ TERMINÉ !")
+    print("\n TERMINÉ !")
     print("Fichiers créés :")
     for k in K_VALUES:
         print(f"  kbits_BM_ports_k{k}.pcap")
