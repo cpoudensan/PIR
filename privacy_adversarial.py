@@ -6,7 +6,6 @@
 NIVEAU 0 : Attaquant naïf (k-anonymat)
 NIVEAU 1 : Connaît le DNS (192.168.10.3)
 NIVEAU 2 : Connaît toutes les IPs internes
-  → Réidentification : nb paquets + ports (Jaccard)
 """
 
 import matplotlib
@@ -120,18 +119,18 @@ if __name__ == "__main__":
     print("ÉVALUATION PRIVACY - 3 NIVEAUX D'ATTAQUANT")
     print("="*70 + "\n")
 
-    print("📊 Extraction données originales...")
+    print("Extraction données originales...")
     orig_data = extract_data(ORIGINAL)
     print(f"✓ {len(orig_data[0])} IPs analysées\n")
 
     results = {}
 
     for name, filepath in FILES.items():
-        print(f"📊 {name}...")
+        print(f" {name}...")
         try:
             anon_data = extract_data(filepath)
         except Exception as e:
-            print(f"   ❌ Erreur : {e}\n")
+            print(f"    Erreur : {e}\n")
             continue
 
         p0 = privacy_level0(orig_data, anon_data)
