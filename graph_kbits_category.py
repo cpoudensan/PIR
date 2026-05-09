@@ -5,13 +5,6 @@ GRAPHIQUE F-SCORE VS K BITS - CATÉGORIE PORTS
 
 Baseline : alerts_orig_category (règles catégories ports)
 Technique : k bits IPs + ports catégorie protocole
-
-Catégories :
-1 = Web (HTTP/HTTPS)
-2 = File Transfer (FTP)
-3 = Email
-4 = Remote Admin (SSH/Telnet)
-5 = Network Management (SNMP)
 """
 
 import matplotlib
@@ -43,10 +36,6 @@ for k in K_VALUES:
         f"TP={metrics['TP']} FP={metrics['FP']} FN={metrics['FN']} | "
         f"F-measure={metrics['F-measure']:.3f}"
     )
-
-# ============================================
-# GRAPHIQUE
-# ============================================
 
 fig, ax = plt.subplots(figsize=(12, 7))
 
