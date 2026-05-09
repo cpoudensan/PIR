@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-SÉRIE 4 : K BITS IPs + PORTS CATÉGORIE (adapté au dataset)
+SÉRIE 4 : K BITS IPs + PORTS CATÉGORIE 
 ============================================================
 
 Catégories basées sur les ports présents dans CIC-IDS 2017 :
 1 = Web (HTTP/HTTPS) - ports 80, 443
 2 = Kerberos (auth Windows) - port 88
-3 = LDAP (directory service) - port 389
-4 = SMB (file sharing Windows) - port 445
+3 = LDAP - port 389
+4 = SMB  - port 445
 5 = RPC Windows - port 135
 0 = Autres
 """
@@ -87,7 +87,7 @@ def create_file(output_file, k):
                 total += len(batch)
         print(f"   ✓ {output_file} ({total} paquets)")
     except Exception as e:
-        print(f"   ❌ Erreur : {e}")
+        print(f"  Erreur : {e}")
 
 if __name__ == "__main__":
 
@@ -96,7 +96,7 @@ if __name__ == "__main__":
     print("="*60 + "\n")
 
     if not os.path.exists(INPUT_FILE):
-        print(f"❌ {INPUT_FILE} non trouvé !")
+        print(f" {INPUT_FILE} non trouvé !")
         exit(1)
 
     for k in K_VALUES:
@@ -104,4 +104,4 @@ if __name__ == "__main__":
         print(f"k={k}...", end=' ')
         create_file(output, k)
 
-    print("\n✓ TERMINÉ !")
+    print("\n TERMINÉ !")
