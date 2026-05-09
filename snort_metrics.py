@@ -39,7 +39,6 @@ def parse_snort_alerts(log_dir):
 def compute_ids_metrics(baseline_dir, anonymized_dir):
     """
     Calcule TP, FP, FN entre baseline et anonymisé.
-    Méthodologie exacte de Lakkaraju Section 3.2.
     """
     baseline   = parse_snort_alerts(baseline_dir)
     anonymized = parse_snort_alerts(anonymized_dir)
