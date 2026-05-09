@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Calcule le F-score basé sur les alertes Snort
-En utilisant la méthode de Yurcik (2008)
 """
 from snort_metrics import evaluate_all
 import matplotlib
@@ -48,7 +47,7 @@ ax.set_xlabel('Technique d\'anonymisation', fontsize=12)
 ax.set_ylabel('F-measure (%)', fontsize=12)
 ax.set_title(
     'F-measure basé sur les alertes Snort\n'
-    'Méthodologie Yurcik et al. (2008) - Lakkaraju Section 3.2\n'
+    'Méthodologie Yurcik et al. (2008)\n'
     'Dataset : CIC-IDS 2017 Tuesday',
     fontsize=12, fontweight='bold'
 )
