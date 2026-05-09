@@ -176,12 +176,3 @@ Attaques (Mardi 4 juillet 2017) :
 - FTP Brute Force : 09h20 - 10h20
 - SSH Brute Force : 14h00 - 15h00
 ```
-
----
-
-## Références
-
-- Yurcik et al. (2008) - SCRUB-tcpdump
-- Lakkaraju et al. (2004) - NVisionIP
-- Koukis et al. (2006) - Modèle adversarial
-- Sharafaldin et al. (2018) - Dataset CIC-IDS 2017
