@@ -10,11 +10,6 @@ Ce projet implémente et évalue des techniques d'anonymisation de traces résea
 ```bash
 pip install scapy yacryptopan matplotlib numpy
 ```
-
-- Python 3.8+
-- Snort 2.9.x
-- Dataset CIC-IDS 2017 Tuesday (converti en .pcap)
-
 ---
 
 ## Dataset
