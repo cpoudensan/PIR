@@ -63,9 +63,9 @@ def create_file(output_file, k):
                         p[IP].dst = anonymize_k_bits(p[IP].dst, k, ip_mapping)
                     writer.write(p)
                 total += len(batch)
-        print(f"   ✓ {output_file} ({total} paquets)")
+        print(f"  {output_file} ({total} paquets)")
     except Exception as e:
-        print(f"   ❌ Erreur : {e}")
+        print(f" Erreur : {e}")
 
 if __name__ == "__main__":
 
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     print("="*60 + "\n")
 
     if not os.path.exists(INPUT_FILE):
-        print(f"❌ {INPUT_FILE} non trouvé !")
+        print(f"{INPUT_FILE} non trouvé !")
         exit(1)
 
     for k in K_VALUES:
@@ -83,7 +83,7 @@ if __name__ == "__main__":
         print(f"k={k}...", end=' ')
         create_file(output, k)
 
-    print("\n✓ TERMINÉ !")
+    print("\nTERMINÉ !")
     print("Fichiers créés :")
     for k in K_VALUES:
         print(f"  C3_keyed_k{k}.pcap")
