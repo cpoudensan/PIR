@@ -43,10 +43,6 @@ for k in K_VALUES:
         f"F-measure={metrics['F-measure']:.3f}"
     )
 
-# ============================================
-# GRAPHIQUE
-# ============================================
-
 fig, ax = plt.subplots(figsize=(12, 7))
 
 color = '#27ae60'
