@@ -8,4 +8,4 @@ with PcapReader('Tuesday-WorkingHours-converted.pcap') as reader, \
         count += 1
         if count >= 50000:
             break
-print(f'✓ {count} paquets écrits')
+print(f' {count} paquets écrits')
