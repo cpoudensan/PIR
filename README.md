@@ -57,6 +57,8 @@ sudo snort -r Tuesday-WorkingHours-C5-KeyedAll.pcap            -c /etc/snort/sno
 python3 run_metrics.py
 ```
 
+![F-score des techniques Yurcik](graph_snort_fscore.png)
+
 ---
 
 ## Figure 2 : F-score en fonction de k bits (graph_C3_kbits_fscore.png)
@@ -88,6 +90,8 @@ sudo snort -r C3_keyed_k32.pcap -c /etc/snort/snort.conf -A full -l ./alerts_C3_
 
 python3 run_metrics_C3_kbits.py
 ```
+
+![F-score en fonction de k bits](graph_kbits_fscore_v2.png)
 
 ---
 
@@ -124,6 +128,8 @@ sudo snort -r kbits_keyed_ports_k32.pcap -c /etc/snort/snort.conf -A full -l ./a
 python3 graph_kbits_3courbes.py
 ```
 
+![F-score k bits + transformation ports](graph_kbits_3courbes.png)
+
 ---
 
 ## Figure 4 : F-score k bits + catégorie protocoles (graph_kbits_category.png)
@@ -158,12 +164,26 @@ sudo snort -r kbits_category_ports_k32.pcap  -c /etc/snort/snort.conf -A full -l
 python3 graph_kbits_category.py
 ```
 
+![F-score k bits + catégorie protocoles](graph_kbits_category.png)
+
+---
+
+## Figure 5 : Privacy des techniques Yurcik (graph_privacy_levels.png)
+
+### Étapes
+```bash
+python3 privacy_adversarial.py
+```
+
+![Privacy des techniques Yurcik](graph_privacy_levels.png)
+
 ---
 
 ## Informations réseau (CIC-IDS 2017)
 
 ```
 Attaquant      : Kali Linux 205.174.165.73
+Victime        : Serveur Web 192.168.10.50 / 205.174.165.68
 DNS            : 192.168.10.3
 Réseau interne : 192.168.10.0/24
 
